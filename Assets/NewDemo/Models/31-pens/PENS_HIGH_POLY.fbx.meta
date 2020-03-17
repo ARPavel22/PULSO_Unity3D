@@ -1,0 +1,204 @@
+fileFormatVersion: 2
+guid: b0bfd952fb0261f42841e221207a984b
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: BALLPOINT PEN
+    100002: BPP 01
+    100004: BPP 02
+    100006: BPP 03
+    100008: BPP 04
+    100010: BPP 05
+    100012: BPP CAP
+    100014: Objet_1
+    100016: Objet_10
+    100018: Objet_11
+    100020: Objet_12
+    100022: Objet_13
+    100024: Objet_14
+    100026: Objet_15
+    100028: Objet_16
+    100030: Objet_17
+    100032: Objet_3
+    100034: Objet_4
+    100036: Objet_5
+    100038: Objet_6
+    100040: Objet_7
+    100042: Objet_8
+    100044: Objet_9
+    100046: PENCIL
+    100048: PENCIL 01
+    100050: PENCIL 02
+    100052: PENCIL 03
+    100054: //RootNode
+    100056: SHARP01
+    100058: SHARP02
+    100060: SHARPENER
+    400000: BALLPOINT PEN
+    400002: BPP 01
+    400004: BPP 02
+    400006: BPP 03
+    400008: BPP 04
+    400010: BPP 05
+    400012: BPP CAP
+    400014: Objet_1
+    400016: Objet_10
+    400018: Objet_11
+    400020: Objet_12
+    400022: Objet_13
+    400024: Objet_14
+    400026: Objet_15
+    400028: Objet_16
+    400030: Objet_17
+    400032: Objet_3
+    400034: Objet_4
+    400036: Objet_5
+    400038: Objet_6
+    400040: Objet_7
+    400042: Objet_8
+    400044: Objet_9
+    400046: PENCIL
+    400048: PENCIL 01
+    400050: PENCIL 02
+    400052: PENCIL 03
+    400054: //RootNode
+    400056: SHARP01
+    400058: SHARP02
+    400060: SHARPENER
+    2100000: _Glass_Pure
+    2100002: "Mat\xE9riau_2"
+    2100004: _Rubber_Orange
+    2300000: Objet_1
+    2300002: Objet_10
+    2300004: Objet_11
+    2300006: Objet_12
+    2300008: Objet_13
+    2300010: Objet_14
+    2300012: Objet_15
+    2300014: Objet_16
+    2300016: Objet_17
+    2300018: Objet_3
+    2300020: Objet_4
+    2300022: Objet_5
+    2300024: Objet_6
+    2300026: Objet_7
+    2300028: Objet_8
+    2300030: Objet_9
+    3300000: Objet_1
+    3300002: Objet_10
+    3300004: Objet_11
+    3300006: Objet_12
+    3300008: Objet_13
+    3300010: Objet_14
+    3300012: Objet_15
+    3300014: Objet_16
+    3300016: Objet_17
+    3300018: Objet_3
+    3300020: Objet_4
+    3300022: Objet_5
+    3300024: Objet_6
+    3300026: Objet_7
+    3300028: Objet_8
+    3300030: Objet_9
+    4300000: Objet_7
+    4300002: Objet_4
+    4300004: Objet_6
+    4300006: Objet_10
+    4300008: Objet_8
+    4300010: Objet_9
+    4300012: Objet_5
+    4300014: Objet_3
+    4300016: Objet_15
+    4300018: Objet_16
+    4300020: Objet_14
+    4300022: Objet_17
+    4300024: Objet_1
+    4300026: Objet_11
+    4300028: Objet_12
+    4300030: Objet_13
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

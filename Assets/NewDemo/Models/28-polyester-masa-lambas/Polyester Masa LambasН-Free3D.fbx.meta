@@ -1,0 +1,199 @@
+fileFormatVersion: 2
+guid: 504272aaa7c8b714db1feadbe4e05939
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Alt_Tel
+    100002: boden
+    100004: Boru
+    100006: "Boru_Kapa\u011F\u0131"
+    100008: "Boru_Kapa\u011F\u0131_1"
+    100010: CINEMA_4D_Editor
+    100012: draht5
+    100014: E27_Ampul_Normal
+    100016: gl_h_draht
+    100018: glass
+    100020: Innglass
+    100022: Lale
+    100024: Light
+    100026: Polyester
+    100028: //RootNode
+    100030: Pul
+    100032: st_be
+    100034: unten
+    100036: Ust_Tel
+    100038: "\u015Eapka"
+    400000: Alt_Tel
+    400002: boden
+    400004: Boru
+    400006: "Boru_Kapa\u011F\u0131"
+    400008: "Boru_Kapa\u011F\u0131_1"
+    400010: CINEMA_4D_Editor
+    400012: draht5
+    400014: E27_Ampul_Normal
+    400016: gl_h_draht
+    400018: glass
+    400020: Innglass
+    400022: Lale
+    400024: Light
+    400026: Polyester
+    400028: //RootNode
+    400030: Pul
+    400032: st_be
+    400034: unten
+    400036: Ust_Tel
+    400038: "\u015Eapka"
+    2000000: CINEMA_4D_Editor
+    2100000: No Name
+    2100002: Mat.3
+    2100004: Chrome
+    2300000: Alt_Tel
+    2300002: boden
+    2300004: Boru
+    2300006: "Boru_Kapa\u011F\u0131"
+    2300008: "Boru_Kapa\u011F\u0131_1"
+    2300010: draht5
+    2300012: gl_h_draht
+    2300014: glass
+    2300016: Innglass
+    2300018: Lale
+    2300020: Polyester
+    2300022: Pul
+    2300024: st_be
+    2300026: unten
+    2300028: Ust_Tel
+    2300030: "\u015Eapka"
+    3300000: Alt_Tel
+    3300002: boden
+    3300004: Boru
+    3300006: "Boru_Kapa\u011F\u0131"
+    3300008: "Boru_Kapa\u011F\u0131_1"
+    3300010: draht5
+    3300012: gl_h_draht
+    3300014: glass
+    3300016: Innglass
+    3300018: Lale
+    3300020: Polyester
+    3300022: Pul
+    3300024: st_be
+    3300026: unten
+    3300028: Ust_Tel
+    3300030: "\u015Eapka"
+    4300000: glass
+    4300002: Innglass
+    4300004: unten
+    4300006: boden
+    4300008: gl_h_draht
+    4300010: draht5
+    4300012: st_be
+    4300014: Alt_Tel
+    4300016: Ust_Tel
+    4300018: "\u015Eapka"
+    4300020: Lale
+    4300022: "Boru_Kapa\u011F\u0131_1"
+    4300024: Boru
+    4300026: "Boru_Kapa\u011F\u0131"
+    4300028: Pul
+    4300030: Polyester
+    10800000: Light
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Chrome
+    second: {fileID: 2100000, guid: b6d103584aa2ac947b09eb22cf1844d6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat.3
+    second: {fileID: 2100000, guid: 334c34edd09923c4fad9f3b9f8fa39d7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: b73c95c59a3cb6446a3fa9728d0333c8, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
