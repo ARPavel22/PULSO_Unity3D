@@ -4,12 +4,14 @@ using UnityEngine;
 
 
 
-public class PULSO_GunBehaviour : PULSO_Event {
+public class PULSO_GunBehaviour : PULSO_Event
+{
 
 	public static PULSO_GunBehaviour _instance;
 
+    
 	public delegate void OnShot();
-	public static OnShot InvokeShot;
+	public OnShot InvokeShot;
 
 	public delegate void OnFireStay();
 	public static OnFireStay FireStay;
@@ -19,6 +21,7 @@ public class PULSO_GunBehaviour : PULSO_Event {
 
 	public delegate void OnGunSelect(int _id);
 	public static OnGunSelect SelectGun;
+    
 
 
     public PULSO_HandpadNew pulso;

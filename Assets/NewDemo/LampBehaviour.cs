@@ -18,10 +18,10 @@ public class LampBehaviour : PULSO_InteractiveObject
         
     }
 
-    public void Click(PULSO_HandpadNew hand)
+    public override void OnTouch(PULSO_HandpadNew pulsoHand)
     {
         Debug.Log("click");
         light.SetActive(!light.activeSelf);
-        Vibrate(1f, 1f, 0.2f, hand.OVRSide);
+        Vibrate(1f, 1f, 0.2f, pulsoHand.OVRSide);
     }
 }

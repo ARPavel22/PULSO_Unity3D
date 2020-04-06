@@ -30,7 +30,14 @@ public class MouseLook : MonoBehaviour {
 
 	float rotationY = 0F;
 
-	void Update ()
+    public float forwardSpeed = 0.1f;
+    public float sideSpeed = 0.1f;
+
+    private float currentForwardSpeed = 0f;
+
+    public GameObject arucoCamToOff;
+
+    void Update ()
 	{
 		if (axes == RotationAxes.MouseXAndY)
 		{
@@ -52,12 +59,34 @@ public class MouseLook : MonoBehaviour {
 			
 			transform.localEulerAngles = new Vector3(-rotationY, transform.localEulerAngles.y, 0);
 		}
-	}
+
+	    if (Input.GetMouseButton(0))
+	    {
+	        currentForwardSpeed = 1f;
+	    }
+        else if (Input.GetMouseButton(1))
+        {
+	        currentForwardSpeed = -1f;
+        }
+	    else
+	    {
+	        currentForwardSpeed = 0f;
+	    }
+
+	    currentForwardSpeed += Input.GetAxis("Horizontal");
+
+
+        transform.Translate(currentForwardSpeed * sideSpeed, 0f, (Input.mouseScrollDelta.y * forwardSpeed) + Input.GetAxis("Vertical") * forwardSpeed);
+    }
 	
 	void Start ()
 	{
 		// Make the rigid body not change rotation
 		if (GetComponent<Rigidbody>())
 			GetComponent<Rigidbody>().freezeRotation = true;
-	}
+
+
+	    arucoCamToOff.SetActive(false);
+
+    }
 }

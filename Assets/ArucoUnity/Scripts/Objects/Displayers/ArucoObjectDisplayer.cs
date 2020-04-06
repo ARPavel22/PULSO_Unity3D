@@ -1,5 +1,6 @@
 ﻿using ArucoUnity.Plugin;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace ArucoUnity.Objects.Displayers
 {
@@ -55,6 +56,9 @@ namespace ArucoUnity.Objects.Displayers
     protected ArucoObject lastArucoObjectOnValidate = null;
 #endif
     protected Material imagePlaneMaterial;
+
+
+
 
     // MonoBehaviour methods
 

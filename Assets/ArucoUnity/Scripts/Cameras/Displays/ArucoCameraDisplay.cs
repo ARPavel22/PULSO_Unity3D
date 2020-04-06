@@ -15,6 +15,8 @@ namespace ArucoUnity.Cameras.Displays
 
         public const float cameraBackgroundDistance = 1f;
 
+        public Vector3 offsetPos = Vector3.one;
+
         // IArucoCameraDisplay properties
 
         public virtual Camera[] Cameras { get; protected set; }
@@ -65,13 +67,14 @@ namespace ArucoUnity.Cameras.Displays
 
         public virtual void PlaceArucoObject(Transform arucoObject, int cameraId, Vector3 localPosition, Quaternion localRotation)
         {
-            var parent = arucoObject.transform.parent;
-            arucoObject.transform.SetParent(Cameras[cameraId].transform);
+            //var parent = arucoObject.transform.parent;
 
-            arucoObject.transform.localPosition = localPosition;
+            //arucoObject.transform.SetParent(Cameras[cameraId].transform);
+
+            arucoObject.transform.localPosition = new Vector3(localPosition.x * offsetPos.x, localPosition.y * offsetPos.y, localPosition.z * offsetPos.z);
             arucoObject.transform.localRotation = localRotation;
 
-            arucoObject.transform.SetParent(parent);
+            //arucoObject.transform.SetParent(parent);
             arucoObject.gameObject.SetActive(true);
         }
 

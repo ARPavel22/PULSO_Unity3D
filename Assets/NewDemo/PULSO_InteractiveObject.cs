@@ -15,4 +15,14 @@ public class PULSO_InteractiveObject : MonoBehaviour
         yield return new WaitForSecondsRealtime(time);
         OVRInput.SetControllerVibration(0f, 0f, handSide);
     }
+
+    public virtual void OnTouch(PULSO_HandpadNew pulsoHand)
+    {
+
+    }
+
+    public virtual void StopTouch(PULSO_HandpadNew pulsoHand)
+    {
+
+    }
 }

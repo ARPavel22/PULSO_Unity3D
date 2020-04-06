@@ -88,15 +88,8 @@ public class PULSO_HandGrabber : MonoBehaviour
         else 
         */
 
-        if (touched is PULSO_CallibrationZone callibrationZone)
-        {
-            callibrationZone.HandIn(pulsoHand);
-        }
+        touched.OnTouch(pulsoHand);
 
-        if (touched is LampBehaviour lamp)
-        {
-            lamp.Click(pulsoHand);
-        }
     }
 
     public void TouchStay(PULSO_HandSubCollider handCollider, Collider other)
@@ -186,10 +179,9 @@ public class PULSO_HandGrabber : MonoBehaviour
             }
             */
         }
-        else if (untouched is PULSO_CallibrationZone callibrationZone)
+        else
         {
-            callibrationZone.HandOut(pulsoHand);
-            pulsoHand.StopCallibration();
+            untouched.StopTouch(pulsoHand);
         }
     }
 

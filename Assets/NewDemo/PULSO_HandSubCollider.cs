@@ -64,7 +64,7 @@ public class PULSO_HandSubCollider : MonoBehaviour
                     bool isStop = true;
                     for (int t = 0; t < currentColliders.Length; t++)
                     {
-                        if (currentColliders[i] == lastColliders[t])
+                        if (currentColliders[t] == lastColliders[i])
                         {
                             isStop = false;
                             break;

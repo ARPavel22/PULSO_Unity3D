@@ -304,6 +304,14 @@ public float[] multiplyMul = new float[5] {1f,1f,1f,1f,1f};
         }
 
         callibrationMode = false;
+
+        for (int i = 0; i < multiplyMul.Length; i++)
+        {
+            if (multiplyMul[i] < 0f)
+            {
+                multiplyMul[i] = 0f;
+            }
+        }
     }
 
 
