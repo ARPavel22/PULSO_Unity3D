@@ -22,6 +22,6 @@ public class LampBehaviour : PULSO_InteractiveObject
     {
         Debug.Log("click");
         light.SetActive(!light.activeSelf);
-        Vibrate(1f, 1f, 0.2f, pulsoHand.OVRSide);
+        Vibrate(1f, 1f, 0.2f, pulsoHand.handSide);
     }
 }

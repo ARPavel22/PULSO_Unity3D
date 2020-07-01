@@ -205,7 +205,8 @@ public class PULSO_HandpadNew : MonoBehaviour
 
     public HandSide handSide = HandSide.RIGHT;
 
-
+    //OculusQuestControllers
+    /*
     public OVRInput.Controller OVRSide
     {
         get
@@ -220,7 +221,7 @@ public class PULSO_HandpadNew : MonoBehaviour
             }
         }
     }
-    
+    */
 
     public int fingerBufferLenght = 5;
 

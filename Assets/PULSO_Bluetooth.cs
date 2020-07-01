@@ -222,6 +222,7 @@ public class PULSO_Bluetooth : MonoBehaviour {
 			}
 		}
 
+		/*
         if (OVRInput.GetUp(OVRInput.RawButton.A))
         {
             if (!device.IsConnected)
@@ -229,6 +230,7 @@ public class PULSO_Bluetooth : MonoBehaviour {
                 device.connect();
             }
         }
+		*/
 	}
 
 	private void OnBluetoothRead(byte[] buffer, int len)

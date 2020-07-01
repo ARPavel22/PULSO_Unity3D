@@ -54,15 +54,17 @@ public class PULSO_Draggable : PULSO_InteractiveObject
     // Update is called once per frame
     void Update()
     {
+        /*
         if (OVRInput.GetUp(OVRInput.RawButton.B))
         {
             OpenJsonProfile();
         }
+        */
     }
 
     public void Get(PULSO_HandpadNew pulso)
     {
-        Vibrate(1f, 1f, 0.1f, pulso.OVRSide);
+        Vibrate(1f, 1f, 0.1f, pulso.handSide);
         transform.SetParent(pulso._handRoot);
 
         if (profile != null && profileLoaded)
@@ -89,7 +91,7 @@ public class PULSO_Draggable : PULSO_InteractiveObject
         transform.localPosition = startLocalPos;
         transform.localRotation = startRot;
 
-        Vibrate(0.5f, 0.5f, 0.1f, lastHand.OVRSide);
+        Vibrate(0.5f, 0.5f, 0.1f, lastHand.handSide);
     }
 
     public void SetGrabPose(string name)
