@@ -121,26 +121,7 @@ public class PULSO_FingerGraph : MonoBehaviour
 
             tex[fingIndex].SetPixels(backgroundColor);
 
-            int t = FindPeakElement(pulso.figers[fingIndex].fingerBuffer);
-            //int t2 = FindPeakElement2(pulso.figers[fingIndex].fingerBuffer);
 
-            if (t > 0)
-            {
-                if (pulso.figers[fingIndex].fingerBuffer[t] > filterLine[fingIndex])
-                {
-                    t = -1;
-                }
-
-                // else if (pulso.figers[finfetID].fingerBuffer[t] < middlePics)
-                //{
-                //  middlePics = (int)(Mathf.Lerp((float)pulso.figers[finfetID].fingerBuffer[t], (float)middlePics, 0.5f));
-                //}
-            }
-
-
-            //int p = GetPeak();
-
-            bool click = false;
             for (int i = 0; i < pulso.fingerBufferLenght; i++)
             {
                 /*
@@ -165,50 +146,12 @@ public class PULSO_FingerGraph : MonoBehaviour
                 {
                 */
 
-                if (i == t && GetDownFinger() == fingIndex) //&& i >= 4) // && i == 4)
-                {
-                    lastClickPower[fingIndex] = 0;
-
-                    for (int k = 1; k < 5; k++)
-                    {
-                        if ((i + k) <= pulso.fingerBufferLenght - 1)
-                        {
-                            lastClickPower[fingIndex] += Mathf.Abs(pulso.figers[fingIndex].fingerBuffer[i] -
-                                                        pulso.figers[fingIndex].fingerBuffer[i + k]);
-                        }
-
-                        if ((i - k) >= 0)
-                        {
-                            lastClickPower[fingIndex] += Mathf.Abs(pulso.figers[fingIndex].fingerBuffer[i] -
-                                                        pulso.figers[fingIndex].fingerBuffer[i - k]);
-                        }
-                    }
-
-
-                    if (lastClickPower[fingIndex] > clickPower[fingIndex] && !click)
-                    {
-                        click = true;
-
-                        middlePics[fingIndex] = (int)(Mathf.Lerp((float)middlePics[fingIndex], (float)pulso.figers[fingIndex].fingerBuffer[t], 0.1f));
-
-                        clickPause[fingIndex] = clickPauseFrames;
-                        Debug.Log(fingIndex + " clicked!");
-
-                        pulso.ResetBuffers();
-
-                        if (keyboard != null)
-                        {
-                            keyboard.ClickOnKey(fingIndex);
-                        }
-
-                    }
-
-                    //Debug.Log("");
+              
                     for (int y = pulso.figers[fingIndex].fingerBuffer[i]; y < tex[fingIndex].height; y++)
                     {
                         tex[fingIndex].SetPixel(i, y, Color.red);
                     }
-                }
+                
                 /*
                 else if (i == p)
                 {

@@ -9,6 +9,7 @@ public class PULSO_UI : MonoBehaviour
     public PULSO_HandpadNew pulso;
     //public Slider controlSlider;
     public Text lastSign;
+	 public Text percent;
     public PULSO_SignRecognizer signs;
 
     void Start()
@@ -19,7 +20,8 @@ public class PULSO_UI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        lastSign.text = signs._lastRecoSign.Name + "\n" + signs._lastRecoSign.RecoPercent.ToString("F1") + "%";
+        lastSign.text = signs._lastRecoSign.Name;
+		percent.text = signs._lastRecoSign.RecoPercent.ToString("F1") + "%";
     }
 
     public void Upd(Slider s)
