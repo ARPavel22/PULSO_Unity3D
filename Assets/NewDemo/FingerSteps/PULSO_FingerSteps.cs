@@ -1,7 +1,9 @@
-﻿using System.Collections;
+﻿using extOSC.Components.Informers;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data.SqlTypes;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PULSO_FingerSteps : MonoBehaviour
 {
@@ -18,7 +20,13 @@ public class PULSO_FingerSteps : MonoBehaviour
 
     public bool wolking = false;
     public float nextStepTimer = 0f;
-    //public int lstFingerCrossDirection = 0;
+    public float lstFingerCrossDist = 0f;
+
+    public bool redyToMove = false;
+
+    public Slider speedslider;
+
+    public Text sttusLbel;
 
     void Start()
     {
@@ -28,7 +36,9 @@ public class PULSO_FingerSteps : MonoBehaviour
 
     void Update()
     {
-        if (pulsoHnd.figers[0].rootNodeAngle_01 > 0.5f && pulsoHnd.figers[3].rootNodeAngle_01 > 0.5f && pulsoHnd.figers[4].rootNodeAngle_01 > 0.5f)
+        redyToMove = pulsoHnd.figers[0].rootNodeAngle_01 < 0.5f && pulsoHnd.figers[3].rootNodeAngle_01 < 0.5f && pulsoHnd.figers[4].rootNodeAngle_01 < 0.5f;
+
+        if (redyToMove)
         {
 
             if (nextStepTimer > 0f)
@@ -49,28 +59,38 @@ public class PULSO_FingerSteps : MonoBehaviour
             {
                 if (nextStepTimer > 0f)
                 {
+                    lstFingerCrossDist = Mathf.Lerp(lstFingerCrossDist, nextStepTimer - 0.1f, 0.5f);
+                    wolking = true;
                     PlyStep();
                 }
 
-                nextStepTimer = 1f;
-
-                //lstFingerCrossDirection = -1;
+                nextStepTimer = 0.5f;
             }
 
             if (distPrev < 0f && dist > 0f)
             {
                 if (nextStepTimer > 0f)
                 {
+                    lstFingerCrossDist = Mathf.Lerp(lstFingerCrossDist, nextStepTimer - 0.1f, 0.5f);
+                    wolking = true;
                     PlyStep();
                 }
 
-                nextStepTimer = 1f;
-                //lstFingerCrossDirection = 1;
+                nextStepTimer = 0.5f;
             }
 
             distPrev = dist;
         }
+        else
+        {
+            lstFingerCrossDist = 0f;
+            nextStepTimer = 0f;
+            wolking = false;
+        }
 
+
+        speedslider.value = lstFingerCrossDist * 2f;
+        sttusLbel.text = wolking ? "move" : "stay";
     }
 
     void PlyStep()
