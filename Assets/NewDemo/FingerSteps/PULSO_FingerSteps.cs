@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Data.SqlTypes;
+using TMPro.EditorUtilities;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -27,6 +28,10 @@ public class PULSO_FingerSteps : MonoBehaviour
     public Slider speedslider;
 
     public Text sttusLbel;
+    public Image sld;
+    public Gradient gradient;
+
+    public float speedMul = 6f;
 
     void Start()
     {
@@ -50,6 +55,9 @@ public class PULSO_FingerSteps : MonoBehaviour
             {
                 nextStepTimer = 0f;
                 wolking = false;
+
+                lstFingerCrossDist = 0f;
+                wolking = false;
             }
 
 
@@ -59,7 +67,7 @@ public class PULSO_FingerSteps : MonoBehaviour
             {
                 if (nextStepTimer > 0f)
                 {
-                    lstFingerCrossDist = Mathf.Lerp(lstFingerCrossDist, nextStepTimer - 0.1f, 0.5f);
+                    lstFingerCrossDist = Mathf.Lerp(lstFingerCrossDist, nextStepTimer * nextStepTimer, 0.5f);
                     wolking = true;
                     PlyStep();
                 }
@@ -71,7 +79,7 @@ public class PULSO_FingerSteps : MonoBehaviour
             {
                 if (nextStepTimer > 0f)
                 {
-                    lstFingerCrossDist = Mathf.Lerp(lstFingerCrossDist, nextStepTimer - 0.1f, 0.5f);
+                    lstFingerCrossDist = Mathf.Lerp(lstFingerCrossDist, nextStepTimer * nextStepTimer, 0.5f);
                     wolking = true;
                     PlyStep();
                 }
@@ -89,7 +97,8 @@ public class PULSO_FingerSteps : MonoBehaviour
         }
 
 
-        speedslider.value = lstFingerCrossDist * 2f;
+        sld.color = gradient.Evaluate(Mathf.Lerp(speedslider.value, lstFingerCrossDist * speedMul, 0.05f));
+        speedslider.value = Mathf.Lerp(speedslider.value, lstFingerCrossDist * speedMul, 0.1f);
         sttusLbel.text = wolking ? "move" : "stay";
     }
 
