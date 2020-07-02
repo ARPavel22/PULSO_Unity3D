@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PULSO;
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
@@ -249,6 +250,15 @@ public float[] multiplyMul = new float[5] {1f,1f,1f,1f,1f};
 
     public void Awake()
     {
+        if (handSide == HandSide.LEFT)
+        {
+            PULSO_Manager.LeftHand = this;
+        }
+        else if (handSide == HandSide.RIGHT)
+        {
+            PULSO_Manager.RightHand = this;
+        }
+
         fingers[4] = fingers[3];
         fingers[3] = fingers[2];
         fingers[2] = fingers[1];
@@ -379,7 +389,7 @@ public float[] multiplyMul = new float[5] {1f,1f,1f,1f,1f};
 		{
 			Parse (msg);
 		}
-	}
+    }
 
 
     public void SetJsonGoalsFromCurrentHand(JsonSign sign)
