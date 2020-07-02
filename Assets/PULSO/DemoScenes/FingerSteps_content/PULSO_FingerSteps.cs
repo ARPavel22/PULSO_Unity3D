@@ -40,7 +40,7 @@ public class PULSO_FingerSteps : MonoBehaviour
 
     void Update()
     {
-        redyToMove = pulsoHnd.figers[0].rootNodeAngle_01 < 0.5f && pulsoHnd.figers[3].rootNodeAngle_01 < 0.5f && pulsoHnd.figers[4].rootNodeAngle_01 < 0.5f;
+        redyToMove = pulsoHnd.fingers[0].rootNodeAngle_01 < 0.5f && pulsoHnd.fingers[3].rootNodeAngle_01 < 0.5f && pulsoHnd.fingers[4].rootNodeAngle_01 < 0.5f;
 
         if (redyToMove)
         {
@@ -60,7 +60,7 @@ public class PULSO_FingerSteps : MonoBehaviour
             }
 
 
-            dist = pulsoHnd.figers[1].rootNodeAngle_01 - pulsoHnd.figers[2].rootNodeAngle_01;
+            dist = pulsoHnd.fingers[1].rootNodeAngle_01 - pulsoHnd.fingers[2].rootNodeAngle_01;
 
             if (distPrev > 0f && dist < 0f)
             {

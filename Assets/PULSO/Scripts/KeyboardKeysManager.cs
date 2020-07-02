@@ -136,36 +136,36 @@ public class KeyboardKeysManager : MonoBehaviour
     /// <returns></returns>
     public int FindPattern()
     {
-        if (pulso.figers[0].fingerInt < pulso.figers[1].fingerInt)
+        if (pulso.fingers[0].fingerInt < pulso.fingers[1].fingerInt)
         {
-            if (pulso.figers[3].fingerInt > pulso.figers[2].fingerInt)//pulso.fingersInt[2] > pulso.fingersInt[1] && 
+            if (pulso.fingers[3].fingerInt > pulso.fingers[2].fingerInt)//pulso.fingersInt[2] > pulso.fingersInt[1] && 
             {
                 //Debug.Log("pATTERN 1");
                 return 0;
             }
         }
 
-        if (pulso.figers[1].fingerInt < pulso.figers[0].fingerInt)
+        if (pulso.fingers[1].fingerInt < pulso.fingers[0].fingerInt)
         {
-            if (pulso.figers[2].fingerInt > pulso.figers[1].fingerInt && pulso.figers[3].fingerInt > pulso.figers[2].fingerInt)
+            if (pulso.fingers[2].fingerInt > pulso.fingers[1].fingerInt && pulso.fingers[3].fingerInt > pulso.fingers[2].fingerInt)
             {
                 //Debug.Log("pATTERN 2");
                 return 1;
             }
         }
 
-        if (pulso.figers[2].fingerInt < pulso.figers[3].fingerInt)
+        if (pulso.fingers[2].fingerInt < pulso.fingers[3].fingerInt)
         {
-            if (pulso.figers[1].fingerInt > pulso.figers[2].fingerInt && pulso.figers[0].fingerInt > pulso.figers[1].fingerInt)
+            if (pulso.fingers[1].fingerInt > pulso.fingers[2].fingerInt && pulso.fingers[0].fingerInt > pulso.fingers[1].fingerInt)
             {
                 //Debug.Log("pATTERN 3");
                 return 2;
             }
         }
 
-        if (pulso.figers[3].fingerInt < pulso.figers[2].fingerInt)
+        if (pulso.fingers[3].fingerInt < pulso.fingers[2].fingerInt)
         {
-            if (pulso.figers[0].fingerInt > pulso.figers[1].fingerInt) //pulso.fingersInt[1] > pulso.fingersInt[2] && 
+            if (pulso.fingers[0].fingerInt > pulso.fingers[1].fingerInt) //pulso.fingersInt[1] > pulso.fingersInt[2] && 
             {
                 // Debug.Log("pATTERN 4");
                 return 3;
@@ -264,7 +264,7 @@ public class KeyboardKeysManager : MonoBehaviour
                 {
                     //keys animation
                     nearKeys[i].body.transform.localPosition = new Vector3(nearKeys[i].startPos.x,
-                        nearKeys[i].startPos.y - (pulso.figers[i].rootNodeAngle_01) * buttonPressedOffset,
+                        nearKeys[i].startPos.y - (pulso.fingers[i].rootNodeAngle_01) * buttonPressedOffset,
                         nearKeys[i].startPos.z);
                 }
             }

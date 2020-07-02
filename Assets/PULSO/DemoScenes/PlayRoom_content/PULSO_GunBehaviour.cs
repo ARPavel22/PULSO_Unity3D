@@ -72,14 +72,14 @@ public class PULSO_GunBehaviour : PULSO_Event
 		{
 			if (_shotState == ShotState.WaitDown)
 			{
-				if (_shotStatrAtPos - pulso.figers[1].rootNodeAngle_01 > 0.05f)
+				if (_shotStatrAtPos - pulso.fingers[1].rootNodeAngle_01 > 0.05f)
 				{
 					if (InvokeShot != null)
 					{
 						InvokeShot ();
 					}
 
-					_shotStatrAtPos = pulso.figers[1].rootNodeAngle_01;
+					_shotStatrAtPos = pulso.fingers[1].rootNodeAngle_01;
 					_shotState = ShotState.WaitUp;
 				}
 			}
@@ -90,7 +90,7 @@ public class PULSO_GunBehaviour : PULSO_Event
 					FireStay ();
 				}
 
-				if (pulso.figers[1].rootNodeAngle_01 >= _shotStatrAtPos + 0.05f)
+				if (pulso.fingers[1].rootNodeAngle_01 >= _shotStatrAtPos + 0.05f)
 				{
 					if (StopFire != null)
 					{

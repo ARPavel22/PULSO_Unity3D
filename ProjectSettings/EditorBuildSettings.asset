@@ -6,12 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/NewDemo/OCULUS_PULSO.unity
+    path: Assets/PULSO/DemoScenes/OCULUS_PULSO.unity
     guid: c6a583381959e4746a063e439ab503e7
   - enabled: 0
     path: Assets/Test.unity
     guid: fd855884a7eb27644b101dbf18112aca
   - enabled: 1
-    path: Assets/NewDemo/CallibrationScene_ndroid.unity
+    path: Assets/PULSO/DemoScenes/CallibrationScene_ndroid.unity
     guid: 3572cc204d88a0b48a535fd1ffe6a379
   m_configObjects: {}

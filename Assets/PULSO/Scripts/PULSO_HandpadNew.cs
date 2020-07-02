@@ -1,8 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
+using System.Collections;
 using UnityEngine;
-using System.Linq;
-using System;
 using UnityEngine.Events;
 
 
@@ -189,7 +187,7 @@ public class PULSO_HandpadNew : MonoBehaviour
 	
 	[Header("Other fingers:")]
 	[SerializeField]
-	public Finger[] figers;
+	public Finger[] fingers;
 
     [Header("Big finger:")]
     [SerializeField]
@@ -251,13 +249,13 @@ public float[] multiplyMul = new float[5] {1f,1f,1f,1f,1f};
 
     public void Awake()
     {
-        figers[4] = figers[3];
-        figers[3] = figers[2];
-        figers[2] = figers[1];
-        figers[1] = figers[0];
-	    figers[0] = bigFinger;
+        fingers[4] = fingers[3];
+        fingers[3] = fingers[2];
+        fingers[2] = fingers[1];
+        fingers[1] = fingers[0];
+	    fingers[0] = bigFinger;
 
-	    foreach (var f in figers)
+	    foreach (var f in fingers)
 	    {
 	        f.pulsoGlove = this;
             f.Init();
@@ -334,12 +332,12 @@ public float[] multiplyMul = new float[5] {1f,1f,1f,1f,1f};
         //
         while (true)
         {
-            float dist = 0.4f - figers[ID].rootNodeAngle_01;
+            float dist = 0.4f - fingers[ID].rootNodeAngle_01;
             multiplyMul[ID] -= callibrationKoef * dist;
 
             if (ID == 1)
             {
-                dist = 0.5f - figers[0].rootNodeAngle_01;
+                dist = 0.5f - fingers[0].rootNodeAngle_01;
                 multiplyMul[0] -= callibrationKoef * dist;
             }
 
@@ -354,9 +352,9 @@ public float[] multiplyMul = new float[5] {1f,1f,1f,1f,1f};
     {
         if (updateForce)
         {
-            for (int i = 0; i < figers.Length; i++)
+            for (int i = 0; i < fingers.Length; i++)
             {
-                figers[i].UpdateAngles();
+                fingers[i].UpdateAngles();
             }
         }
     }
@@ -364,9 +362,9 @@ public float[] multiplyMul = new float[5] {1f,1f,1f,1f,1f};
 
     public void ResetBuffers()
     {
-        for (int i = 0; i < figers.Length; i++)
+        for (int i = 0; i < fingers.Length; i++)
         {
-            figers[i].ResetBuffer();
+            fingers[i].ResetBuffer();
         }
     }
 
@@ -386,11 +384,11 @@ public float[] multiplyMul = new float[5] {1f,1f,1f,1f,1f};
 
     public void SetJsonGoalsFromCurrentHand(JsonSign sign)
     {
-        sign._goal0 = figers[0].rootNodeAngle_01;
-        sign._goal1 = figers[1].rootNodeAngle_01;
-        sign._goal2 = figers[2].rootNodeAngle_01;
-        sign._goal3 = figers[3].rootNodeAngle_01;
-        sign._goal4 = figers[4].rootNodeAngle_01;
+        sign._goal0 = fingers[0].rootNodeAngle_01;
+        sign._goal1 = fingers[1].rootNodeAngle_01;
+        sign._goal2 = fingers[2].rootNodeAngle_01;
+        sign._goal3 = fingers[3].rootNodeAngle_01;
+        sign._goal4 = fingers[4].rootNodeAngle_01;
     }
 
 	public void Parse(string package)
@@ -421,29 +419,29 @@ public float[] multiplyMul = new float[5] {1f,1f,1f,1f,1f};
 			    // 0 1 2 3 4 
                 if (k < 5)
 			    {
-			        figers[k].fingerInt = 511 - raw_0_254;
-			        figers[k].rootNodeAngle_01 = figers[k].invertMagnet ? angle_0_1 : 1f - angle_0_1;
+			        fingers[k].fingerInt = 511 - raw_0_254;
+			        fingers[k].rootNodeAngle_01 = fingers[k].invertMagnet ? angle_0_1 : 1f - angle_0_1;
                 }
 
                 // 5 6 7 8 9 
 			    if (k > 4 && k < 10)
 			    {
-			        //figers[k - 5].fingerInt = 511 - raw_0_254;
-			        figers[k - 5].middleNodeAngle_01 = figers[k - 5].invertMagnet2 ? angle_0_1 : 1f - angle_0_1;
+			        //fingers[k - 5].fingerInt = 511 - raw_0_254;
+			        fingers[k - 5].middleNodeAngle_01 = fingers[k - 5].invertMagnet2 ? angle_0_1 : 1f - angle_0_1;
                 }
                 // 10 11 12 13 14 
 			    if (k > 9 && k < 15)
 			    {
-                    //figers[k - 10].fingerInt = 511 - raw_0_254;
-			        figers[k - 10].spokeNodeAngle_01 = figers[k - 10].invertMagnet3 ? angle_0_1 : 1f - angle_0_1;
+                    //fingers[k - 10].fingerInt = 511 - raw_0_254;
+			        fingers[k - 10].spokeNodeAngle_01 = fingers[k - 10].invertMagnet3 ? angle_0_1 : 1f - angle_0_1;
 			    }
 
             }
 
-			for (int i = 0; i < figers.Length; i++)
+			for (int i = 0; i < fingers.Length; i++)
 			{
-                figers[i].UpdateBuffer();
-				figers[i].UpdateAngles();
+                fingers[i].UpdateBuffer();
+				fingers[i].UpdateAngles();
             }
 		}
 		catch(System.Exception e)

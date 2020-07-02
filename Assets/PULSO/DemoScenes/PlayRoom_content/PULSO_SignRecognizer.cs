@@ -52,11 +52,11 @@ public class UnitySign
 
     public void Calc()
     {
-        float _dist0 = System.Math.Abs(_recognizer._hand.figers[0].rootNodeAngle_01 - _sign._goal0);
-        float _dist1 = System.Math.Abs(_recognizer._hand.figers[1].rootNodeAngle_01 - _sign._goal1);
-        float _dist2 = System.Math.Abs(_recognizer._hand.figers[2].rootNodeAngle_01 - _sign._goal2);
-        float _dist3 = System.Math.Abs(_recognizer._hand.figers[3].rootNodeAngle_01 - _sign._goal3);
-        float _dist4 = System.Math.Abs(_recognizer._hand.figers[4].rootNodeAngle_01 - _sign._goal4);
+        float _dist0 = System.Math.Abs(_recognizer._hand.fingers[0].rootNodeAngle_01 - _sign._goal0);
+        float _dist1 = System.Math.Abs(_recognizer._hand.fingers[1].rootNodeAngle_01 - _sign._goal1);
+        float _dist2 = System.Math.Abs(_recognizer._hand.fingers[2].rootNodeAngle_01 - _sign._goal2);
+        float _dist3 = System.Math.Abs(_recognizer._hand.fingers[3].rootNodeAngle_01 - _sign._goal3);
+        float _dist4 = System.Math.Abs(_recognizer._hand.fingers[4].rootNodeAngle_01 - _sign._goal4);
 
         _dist = 1f - (_dist0 + _dist1 + _dist2 + _dist3 + _dist4) * 0.2f;  // = 1/5
     }
@@ -267,11 +267,11 @@ public class PULSO_SignRecognizer : MonoBehaviour
         newSign.Name = name;
         
 
-        newSign._sign._goal0 = _hand.figers[0].rootNodeAngle_01;
-        newSign._sign._goal1 = _hand.figers[1].rootNodeAngle_01;
-        newSign._sign._goal2 = _hand.figers[2].rootNodeAngle_01;
-        newSign._sign._goal3 = _hand.figers[3].rootNodeAngle_01;
-        newSign._sign._goal4 = _hand.figers[4].rootNodeAngle_01;
+        newSign._sign._goal0 = _hand.fingers[0].rootNodeAngle_01;
+        newSign._sign._goal1 = _hand.fingers[1].rootNodeAngle_01;
+        newSign._sign._goal2 = _hand.fingers[2].rootNodeAngle_01;
+        newSign._sign._goal3 = _hand.fingers[3].rootNodeAngle_01;
+        newSign._sign._goal4 = _hand.fingers[4].rootNodeAngle_01;
 
         _signs.Add(newSign);
     }

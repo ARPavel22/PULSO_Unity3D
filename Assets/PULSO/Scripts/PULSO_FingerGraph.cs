@@ -79,11 +79,11 @@ public class PULSO_FingerGraph : MonoBehaviour
     {
         int id = 0;
         int min = 511;
-        for (int i = 0; i < pulso.figers.Length; i++)
+        for (int i = 0; i < pulso.fingers.Length; i++)
         {
-            if (pulso.figers[i].fingerInt < min)
+            if (pulso.fingers[i].fingerInt < min)
             {
-                min = pulso.figers[i].fingerInt;
+                min = pulso.fingers[i].fingerInt;
                 id = i;
             }
         }
@@ -97,7 +97,7 @@ public class PULSO_FingerGraph : MonoBehaviour
     {
         if (minClickPowerSliders.Length != 0)
         {
-            for (int i = 1; i < pulso.figers.Length; i++)
+            for (int i = 1; i < pulso.fingers.Length; i++)
             {
                 clickPower[i - 1] = (int)Mathf.Lerp(100, 1200, minClickPowerSliders[i - 1].currentAngle);
                 filterLine[i - 1] = (int)Mathf.Lerp(50, 400, minClicLineSliders[i - 1].currentAngle);
@@ -127,7 +127,7 @@ public class PULSO_FingerGraph : MonoBehaviour
                 /*
                 if (t2 == i && t2 != -1)
                 {
-                    for (int y = pulso.figers[fingIndex].fingerBuffer[i]; y < tex[fingIndex].height; y++)
+                    for (int y = pulso.fingers[fingIndex].fingerBuffer[i]; y < tex[fingIndex].height; y++)
                     {
                         tex[fingIndex].SetPixel(i, y, Color.blue);
                     }
@@ -137,7 +137,7 @@ public class PULSO_FingerGraph : MonoBehaviour
                 /*
                 if (t == p && i == t)
                 {
-                    for (int y = pulso.figers[finfetID].fingerBuffer[i]; y < tex.height; y++)
+                    for (int y = pulso.fingers[finfetID].fingerBuffer[i]; y < tex.height; y++)
                     {
                         tex.SetPixel(i, y, Color.magenta);
                     }
@@ -147,7 +147,7 @@ public class PULSO_FingerGraph : MonoBehaviour
                 */
 
               
-                    for (int y = pulso.figers[fingIndex].fingerBuffer[i]; y < tex[fingIndex].height; y++)
+                    for (int y = pulso.fingers[fingIndex].fingerBuffer[i]; y < tex[fingIndex].height; y++)
                     {
                         tex[fingIndex].SetPixel(i, y, Color.red);
                     }
@@ -155,7 +155,7 @@ public class PULSO_FingerGraph : MonoBehaviour
                 /*
                 else if (i == p)
                 {
-                    for (int y = pulso.figers[finfetID].fingerBuffer[i]; y < tex.height; y++)
+                    for (int y = pulso.fingers[finfetID].fingerBuffer[i]; y < tex.height; y++)
                     {
                         tex.SetPixel(i, y, Color.green);
                     }
@@ -163,23 +163,23 @@ public class PULSO_FingerGraph : MonoBehaviour
                 */
                 //}
 
-                tex[fingIndex].SetPixel(i, pulso.figers[fingIndex].fingerBuffer[i], Color.white);
-                tex[fingIndex].SetPixel(i, pulso.figers[fingIndex].fingerBuffer[i] + 1, Color.white);
+                tex[fingIndex].SetPixel(i, pulso.fingers[fingIndex].fingerBuffer[i], Color.white);
+                tex[fingIndex].SetPixel(i, pulso.fingers[fingIndex].fingerBuffer[i] + 1, Color.white);
 
                 if (i < pulso.fingerBufferLenght - 1)
                 {
-                    if (pulso.figers[fingIndex].fingerBuffer[i] - pulso.figers[fingIndex].fingerBuffer[i + 1] > 40)
+                    if (pulso.fingers[fingIndex].fingerBuffer[i] - pulso.fingers[fingIndex].fingerBuffer[i + 1] > 40)
                     {
-                        tex[fingIndex].SetPixel(i, pulso.figers[fingIndex].fingerBuffer[i], Color.red);
+                        tex[fingIndex].SetPixel(i, pulso.fingers[fingIndex].fingerBuffer[i], Color.red);
                     }
 
                 }
 
                 if (i > 0)
                 {
-                    if (pulso.figers[fingIndex].fingerBuffer[i] - pulso.figers[fingIndex].fingerBuffer[i - 1] > 40)
+                    if (pulso.fingers[fingIndex].fingerBuffer[i] - pulso.fingers[fingIndex].fingerBuffer[i - 1] > 40)
                     {
-                        tex[fingIndex].SetPixel(i, pulso.figers[fingIndex].fingerBuffer[i], Color.cyan);
+                        tex[fingIndex].SetPixel(i, pulso.fingers[fingIndex].fingerBuffer[i], Color.cyan);
                     }
 
                 }
@@ -271,8 +271,8 @@ public class PULSO_FingerGraph : MonoBehaviour
     {
         for (int i = 1; i < pulso.fingerBufferLenght - 1; i++)
         {
-            if (pulso.figers[0].fingerBuffer[i] < pulso.figers[0].fingerBuffer[i - 1] &&
-                pulso.figers[0].fingerBuffer[i] < pulso.figers[0].fingerBuffer[i + 1])
+            if (pulso.fingers[0].fingerBuffer[i] < pulso.fingers[0].fingerBuffer[i - 1] &&
+                pulso.fingers[0].fingerBuffer[i] < pulso.fingers[0].fingerBuffer[i + 1])
             {
                 return i;
             }

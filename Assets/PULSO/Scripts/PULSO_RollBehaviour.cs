@@ -69,7 +69,7 @@ public class PULSO_RollBehaviour : MonoBehaviour
         {
             if (IsHandClosed() || testCloseHand)
             {
-                currentAngle = pulso.figers[0].rootNodeAngle_01;
+                currentAngle = pulso.fingers[0].rootNodeAngle_01;
                 rotBody.localRotation = Quaternion.Euler(0f, currentAngle * 360f, 0f);
             }
         }
@@ -82,9 +82,9 @@ public class PULSO_RollBehaviour : MonoBehaviour
         //    return false;
         //}
 
-        for (int i = 1; i < pulso.figers.Length; i++)
+        for (int i = 1; i < pulso.fingers.Length; i++)
         {
-            if (pulso.figers[i].rootNodeAngle_01 > 0.5f)
+            if (pulso.fingers[i].rootNodeAngle_01 > 0.5f)
             {
                 return false;
             }

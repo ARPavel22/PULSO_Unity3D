@@ -84,7 +84,7 @@ public class FireBall : MonoBehaviour
 
         for (int i = 0; i < 5; i++)
         {
-        	if (_pulso.figers[i].rootNodeAngle_01 > 0.65f)
+        	if (_pulso.fingers[i].rootNodeAngle_01 > 0.65f)
         	{
         		openedFingers++;
         	}
@@ -104,7 +104,7 @@ public class FireBall : MonoBehaviour
 
         for (int i = 0; i < 5; i++)
         {
-        	if (_pulso.figers[i].rootNodeAngle_01 < 0.4f)
+        	if (_pulso.fingers[i].rootNodeAngle_01 < 0.4f)
         	{
         		closedFingers++;
         	}
