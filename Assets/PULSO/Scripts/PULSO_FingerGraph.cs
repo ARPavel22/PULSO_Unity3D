@@ -7,7 +7,7 @@ public class PULSO_FingerGraph : MonoBehaviour
 {
 
     public Texture2D[] tex;
-    public PULSO_HandpadNew pulso;
+    public PULSO_Handpad pulso;
 
     [HideInInspector()]
     public Color[] backgroundColor;

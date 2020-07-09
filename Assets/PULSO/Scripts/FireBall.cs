@@ -5,7 +5,7 @@ using UnityEngine;
 public class FireBall : MonoBehaviour
 {
 	public GameObject ballPref;
-	public PULSO_HandpadNew _pulso;
+	public PULSO_Handpad _pulso;
 
 	float timeToCast = 1f;
 	float castTimer = 0f;

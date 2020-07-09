@@ -23,7 +23,7 @@ public class PULSO_Draggable : PULSO_InteractiveObject
     public string profileName;
 
 
-    public PULSO_HandpadNew lastHand;
+    public PULSO_Handpad lastHand;
     //[SerializeField]
     public ItemInteractiveProfie profile;
     public bool profileLoaded = false;
@@ -62,7 +62,7 @@ public class PULSO_Draggable : PULSO_InteractiveObject
         */
     }
 
-    public void Get(PULSO_HandpadNew pulso)
+    public void Get(PULSO_Handpad pulso)
     {
         Vibrate(1f, 1f, 0.1f, pulso.handSide);
         transform.SetParent(pulso._handRoot);

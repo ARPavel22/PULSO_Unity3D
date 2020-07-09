@@ -17,13 +17,13 @@ public class PULSO_CallibrationZone : PULSO_InteractiveObject
     }
 
 
-    public override void OnTouch(PULSO_HandpadNew pulsoHand)
+    public override void OnTouch(PULSO_Handpad pulsoHand)
     {
         pulsoHand.CallibrateFinger(fingerID);
         render.material = handInMat;
     }
 
-    public override void StopTouch(PULSO_HandpadNew pulsoHand)
+    public override void StopTouch(PULSO_Handpad pulsoHand)
     {
         pulsoHand.StopCallibration();
         render.material = handOutMat;

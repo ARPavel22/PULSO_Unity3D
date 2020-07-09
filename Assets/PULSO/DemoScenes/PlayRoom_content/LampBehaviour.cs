@@ -18,7 +18,7 @@ public class LampBehaviour : PULSO_InteractiveObject
         
     }
 
-    public override void OnTouch(PULSO_HandpadNew pulsoHand)
+    public override void OnTouch(PULSO_Handpad pulsoHand)
     {
         Debug.Log("click");
         light.SetActive(!light.activeSelf);

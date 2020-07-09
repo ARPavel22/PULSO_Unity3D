@@ -13,7 +13,7 @@ public class PULSO_Bluetooth : MonoBehaviour {
 	//public Text statusText;
 
 
-	public PULSO_HandpadNew _parser;
+	public PULSO_Handpad _parser;
 
 
 	private string packet = "";
@@ -74,6 +74,11 @@ public class PULSO_Bluetooth : MonoBehaviour {
 
 		Debug.Log ("connect");
 		connect ();
+
+		yield return new WaitForSecondsRealtime(5f);
+
+		Debug.Log("connect 2");
+		connect();
 	}
 
 	void OnDestroy()

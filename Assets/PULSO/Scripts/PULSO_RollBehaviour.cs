@@ -7,7 +7,7 @@ public class PULSO_RollBehaviour : MonoBehaviour
 {
     public float distanceToActivate = 0.1f;
 
-    public PULSO_HandpadNew pulso;
+    public PULSO_Handpad pulso;
 
     public Material defaultMat;
     public Material selectedMat;

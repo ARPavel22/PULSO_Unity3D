@@ -37,7 +37,7 @@ public class ReadInputManager
         JoystickAxis,
     };
 
-    [MenuItem("Assets/ReadInputManager")]
+    ///[MenuItem("Assets/ReadInputManager")]
     public static void DoRead()
     {
         ReadAxes();

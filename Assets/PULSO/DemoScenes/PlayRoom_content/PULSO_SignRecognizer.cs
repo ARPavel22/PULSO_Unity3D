@@ -109,7 +109,7 @@ public class PULSO_SignRecognizer : MonoBehaviour
 
     //public static PULSO_SignRecognizer _instance;
 
-    public PULSO_HandpadNew _hand;
+    public PULSO_Handpad _hand;
 
     /*
 	public void Awake()
@@ -295,12 +295,12 @@ public class PULSO_SignRecognizer : MonoBehaviour
                 break;
         }
 
-        Debug.Log(_filesPath + "/" + _fileName + ".json");
+        Debug.Log(_filesPath + "/PULSO/" + _fileName + ".json");
 
-        if (File.Exists(_filesPath + "/" + _fileName + ".json"))
+        if (File.Exists(_filesPath + "/PULSO/" + _fileName + ".json"))
         {
 
-            string _t = File.ReadAllText(_filesPath + "/" + _fileName + ".json");
+            string _t = File.ReadAllText(_filesPath + "/PULSO/" + _fileName + ".json");
             SignsFile _file = JsonUtility.FromJson<SignsFile>(_t);
 
             _signs.Clear();
@@ -349,6 +349,6 @@ public class PULSO_SignRecognizer : MonoBehaviour
 
         string _json = JsonUtility.ToJson(_file);
         Debug.Log(_json);
-        File.WriteAllText(_filesPath + "/" + _fileName + ".json", _json);
+        File.WriteAllText(_filesPath + "/PULSO/" + _fileName + ".json", _json);
     }
 }

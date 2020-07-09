@@ -11,7 +11,7 @@ public class PULSO_HandGrabber : MonoBehaviour
     public PULSO_Draggable inHand = null;
 
 
-    public PULSO_HandpadNew pulsoHand;
+    public PULSO_Handpad pulsoHand;
 
     public PULSO_SignRecognizer signsListener;
 

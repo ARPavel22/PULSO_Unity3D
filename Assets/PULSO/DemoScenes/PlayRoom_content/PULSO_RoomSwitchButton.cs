@@ -12,7 +12,7 @@ public class PULSO_RoomSwitchButton :  PULSO_InteractiveObject
         PULSO_DemoRoomsManager.instance.buttons.Add(this);
     }
 
-    public override void OnTouch(PULSO_HandpadNew pulsoHand)
+    public override void OnTouch(PULSO_Handpad pulsoHand)
     {
         PULSO_DemoRoomsManager.instance.CloseAll();
 
@@ -21,7 +21,7 @@ public class PULSO_RoomSwitchButton :  PULSO_InteractiveObject
         openRoom.SetActive(true);
     }
 
-    public override void StopTouch(PULSO_HandpadNew pulsoHand)
+    public override void StopTouch(PULSO_Handpad pulsoHand)
     {
         
     }

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PULSO_UI : MonoBehaviour
 {
     // Start is called before the first frame update
-    public PULSO_HandpadNew pulso;
+    public PULSO_Handpad pulso;
     //public Slider controlSlider;
     public Text lastSign;
 	 public Text percent;

@@ -49,7 +49,7 @@ public class KeyboardKeysManager : MonoBehaviour
 
     public Transform helperViewTransform;
 
-    public PULSO_HandpadNew pulso;
+    public PULSO_Handpad pulso;
 
     public Text testInput;
 

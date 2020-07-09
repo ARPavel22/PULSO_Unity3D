@@ -1,13 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Data.SqlTypes;
-using TMPro.EditorUtilities;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class PULSO_FingerSteps : MonoBehaviour
 {
-    public PULSO_HandpadNew pulsoHnd;
+    public PULSO_Handpad pulsoHnd;
+
 
     public AudioSource snd;
 

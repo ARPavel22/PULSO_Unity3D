@@ -3097,6 +3097,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pulso: {fileID: 1017525238}
   lastSign: {fileID: 2071256852}
+  percent: {fileID: 0}
   signs: {fileID: 1459633572}
 --- !u!4 &628442452
 Transform:
@@ -4706,184 +4707,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec451f3cd5954fa449aeaad1431bd404, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gloveType: 0
-  _handRoot: {fileID: 1274496992}
-  _mainButton: 0
-  _batteryPower: 100
-  bigSmooth: 1
-  fourSmooth: 1
-  figers:
-  - name: 1
-    invertMagnet: 1
-    invertMagnet2: 1
-    invertMagnet3: 0
-    rootNode: {fileID: 1579497716}
-    rootNode_fromAngle: -88.5
-    rootNode_toAngle: 10
-    rootNodeAngle_01: 0.99804306
-    middleNode: {fileID: 228737722}
-    middleNode_fromAngle: -77
-    middleNode_toAngle: 0
-    middleNodeAngle_01: 0.78277886
-    pointNode: {fileID: 649584959}
-    pointNode_fromAngle: -49.1
-    pointNode_toAngle: 0
-    pointNodeAngle_01: 1
-    axis: {x: 0, y: 0, z: 1}
-    spokeNodeAngle_01: 1
-    pulsoGlove: {fileID: 1017525238}
-    fingerInt: 510
-    callibratedSteps: 0
-    fingerBuffer: fe010000fe010000ff010000ff010000ff010000fe010000ff010000fe010000fe010000fe010000fe010000fe010000fe010000ff010000fe010000fe010000ff010000ff010000fe010000fe010000
-    OnStartMotion:
-      m_PersistentCalls:
-        m_Calls: []
-  - name: 2
-    invertMagnet: 1
-    invertMagnet2: 1
-    invertMagnet3: 0
-    rootNode: {fileID: 1074705182}
-    rootNode_fromAngle: -88.5
-    rootNode_toAngle: 10
-    rootNodeAngle_01: 0.86105675
-    middleNode: {fileID: 561712696}
-    middleNode_fromAngle: -59.6
-    middleNode_toAngle: 0
-    middleNodeAngle_01: 1
-    pointNode: {fileID: 1022855736}
-    pointNode_fromAngle: -78.1
-    pointNode_toAngle: 0
-    pointNodeAngle_01: 1
-    axis: {x: 0, y: 0, z: 1}
-    spokeNodeAngle_01: 1
-    pulsoGlove: {fileID: 1017525238}
-    fingerInt: 71
-    callibratedSteps: 0
-    fingerBuffer: 47000000470000005200000036000000260000004700000020000000360000003c0000003c00000036000000260000003600000047000000470000005200000047000000470000004100000036000000
-    OnStartMotion:
-      m_PersistentCalls:
-        m_Calls: []
-  - name: 3
-    invertMagnet: 1
-    invertMagnet2: 1
-    invertMagnet3: 0
-    rootNode: {fileID: 1892624252}
-    rootNode_fromAngle: -88.5
-    rootNode_toAngle: 10
-    rootNodeAngle_01: 0.9197652
-    middleNode: {fileID: 960129504}
-    middleNode_fromAngle: -55.5
-    middleNode_toAngle: 0
-    middleNodeAngle_01: 1
-    pointNode: {fileID: 413934749}
-    pointNode_fromAngle: -83.6
-    pointNode_toAngle: 0
-    pointNodeAngle_01: 1
-    axis: {x: 0, y: 0, z: 1}
-    spokeNodeAngle_01: 1
-    pulsoGlove: {fileID: 1017525238}
-    fingerInt: 470
-    callibratedSteps: 0
-    fingerBuffer: d6010000d3010000d5010000d5010000d5010000d3010000cd010000d5010000d8010000d5010000d9010000d9010000d3010000d7010000da010000d9010000d9010000da010000da010000da010000
-    OnStartMotion:
-      m_PersistentCalls:
-        m_Calls: []
-  - name: 4
-    invertMagnet: 1
-    invertMagnet2: 1
-    invertMagnet3: 0
-    rootNode: {fileID: 86242403}
-    rootNode_fromAngle: -70
-    rootNode_toAngle: 10
-    rootNodeAngle_01: 0.94716245
-    middleNode: {fileID: 839440089}
-    middleNode_fromAngle: -83.6
-    middleNode_toAngle: 0
-    middleNodeAngle_01: 0.14872801
-    pointNode: {fileID: 862602684}
-    pointNode_fromAngle: -49.1
-    pointNode_toAngle: 0
-    pointNodeAngle_01: 1
-    axis: {x: 0, y: 0, z: 1}
-    spokeNodeAngle_01: 1
-    pulsoGlove: {fileID: 1017525238}
-    fingerInt: 27
-    callibratedSteps: 0
-    fingerBuffer: 1b0000001b0000001b0000001b0000001b0000001b000000190000001c0000001c0000001c0000001c0000001c0000001c0000001c0000001c0000001c0000001c0000001c0000001c0000001c000000
-    OnStartMotion:
-      m_PersistentCalls:
-        m_Calls: []
-  - name: 0
-    invertMagnet: 0
-    invertMagnet2: 0
-    invertMagnet3: 0
-    rootNode: {fileID: 0}
-    rootNode_fromAngle: 0
-    rootNode_toAngle: 0
-    rootNodeAngle_01: 0
-    middleNode: {fileID: 0}
-    middleNode_fromAngle: 0
-    middleNode_toAngle: 0
-    middleNodeAngle_01: 0
-    pointNode: {fileID: 0}
-    pointNode_fromAngle: 0
-    pointNode_toAngle: 0
-    pointNodeAngle_01: 1
-    axis: {x: 0, y: 0, z: 1}
-    spokeNodeAngle_01: 1
-    pulsoGlove: {fileID: 0}
-    fingerInt: 0
-    callibratedSteps: 0
-    fingerBuffer: 1b0000001b0000001b0000001b0000001b0000001b000000190000001c0000001c0000001c0000001c0000001c0000001c0000001c0000001c0000001c0000001c0000001c0000001c0000001c000000
-    OnStartMotion:
-      m_PersistentCalls:
-        m_Calls: []
-  bigFinger:
-    name: 0
-    invertMagnet: 1
-    invertMagnet2: 1
-    invertMagnet3: 0
-    rootNode: {fileID: 1668598261}
-    rootNode_fromAngle: -90
-    rootNode_toAngle: 0
-    rootNodeAngle_01: 0
-    middleNode: {fileID: 1131466691}
-    middleNode_fromAngle: -52
-    middleNode_toAngle: 0
-    middleNodeAngle_01: 0
-    pointNode: {fileID: 1265958723}
-    pointNode_fromAngle: -42
-    pointNode_toAngle: 17.95
-    pointNodeAngle_01: 1
-    axis: {x: 0, y: 0, z: 1}
-    spokeNodeAngle_01: 1
-    pulsoGlove: {fileID: 1017525238}
-    fingerInt: 511
-    callibratedSteps: 0
-    fingerBuffer: ff010000ff010000ff010000ff010000ff010000ff010000ff010000ff010000ff010000ff010000ff010000ff010000ff010000ff010000ff010000ff010000ff010000ff010000ff010000ff010000
-    OnStartMotion:
-      m_PersistentCalls:
-        m_Calls: []
-    useAnimator: 1
-    animator: {fileID: 1274496991}
-    animationClipName: BigFingerBase
-  updateForce: 0
-  handSide: 1
-  fingerBufferLenght: 20
-  receiveRate: 0.0180237
-  PulsoBT: {fileID: 1017525241}
-  PulsoSerial: {fileID: 1017525240}
-  pointerRoot: {fileID: 1017525239}
-  showIncomingStringsData: 0
-  multiplyMul:
-  - 3.829378
-  - 1.223037
-  - 2.471564
-  - 2.43714
-  - 2.35
-  multiplyFunction: 1
-  callibrationMode: 0
-  callibrationKoef: 1
 --- !u!4 &1017525239
 Transform:
   m_ObjectHideFlags: 0
@@ -4911,7 +4734,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bc5f48af2cffd747a079fe8c632e2c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  portName: \\.\COM112
+  portName: \\.\COM22
   baudRate: 115200
   messageListener: {fileID: 1017525237}
   reconnectionDelay: 1000
@@ -4928,8 +4751,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b8f2794793ea0b4e9eaf68a5a6ce4e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _parser: {fileID: 1017525238}
-  deviceBTName: PULSO_L
 --- !u!114 &1017525242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8452,7 +8273,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1719184210
 MonoBehaviour:
   m_ObjectHideFlags: 0

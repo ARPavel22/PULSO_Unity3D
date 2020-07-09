@@ -1,11 +1,13 @@
-﻿using PULSO;
+﻿using Boo.Lang;
+using PULSO;
 using System;
 using System.Collections;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
 
-public class PULSO_HandpadNew : MonoBehaviour
+public class PULSO_Handpad : MonoBehaviour
 {
 	[Serializable]
 	public class Finger
@@ -20,10 +22,6 @@ public class PULSO_HandpadNew : MonoBehaviour
 		}
 
 		public Names name;
-
-		public bool invertMagnet;
-        public bool invertMagnet2;
-        public bool invertMagnet3;
 
         public Transform rootNode;
 		public float rootNode_fromAngle;
@@ -43,14 +41,15 @@ public class PULSO_HandpadNew : MonoBehaviour
 		[Range(0f, 1f)]
 		public float pointNodeAngle_01 = 1.0f;
 
-		public Vector3 axis = Vector3.forward;
+		//public Vector3 axis = Vector3.forward;
 		float prev_rootNodeAngle_01;
 		float prev_middleNodeAngle_01;
 
 	    [Range(0f, 1f)]
 	    public float spokeNodeAngle_01 = 1.0f;
 
-        public PULSO_HandpadNew pulsoGlove;
+        [HideInInspector]
+        public PULSO_Handpad parentHandPad;
 
 	    public int fingerInt = 0;
 
@@ -62,7 +61,7 @@ public class PULSO_HandpadNew : MonoBehaviour
 
 	    public void Init()
 	    {
-	        fingerBuffer = new int[pulsoGlove.fingerBufferLenght];
+	        fingerBuffer = new int[parentHandPad.fingerBufferLenght];
         }
 
 	    public void ResetBuffer()
@@ -108,20 +107,26 @@ public class PULSO_HandpadNew : MonoBehaviour
 
         public virtual void UpdateAngles()
 		{
-            if (pulsoGlove.gloveType == PulsoType.PulsoPRO)
+            if (parentHandPad.gloveType == PulsoType.PulsoPRO)
             {
-                rootNode.localRotation = Quaternion.Euler(0f, 0f, Mathf.Lerp(rootNode_fromAngle, rootNode_toAngle, Mathf.Lerp(rootNodeAngle_01, prev_rootNodeAngle_01, pulsoGlove.fourSmooth)));
-                middleNode.localRotation = Quaternion.Euler(0f, 0f, Mathf.Lerp(middleNode_fromAngle, middleNode_toAngle, Mathf.Lerp(middleNodeAngle_01, prev_middleNodeAngle_01, pulsoGlove.fourSmooth)));
-                pointNode.localRotation = Quaternion.Euler(0f, 0f, Mathf.Lerp(pointNode_fromAngle, pointNode_toAngle, Mathf.Lerp(middleNodeAngle_01, prev_middleNodeAngle_01, pulsoGlove.fourSmooth)));
+                if (rootNode != null)
+                    rootNode.localRotation = Quaternion.Euler(0f, 0f, Mathf.Lerp(rootNode_fromAngle, rootNode_toAngle, Mathf.Lerp(rootNodeAngle_01, prev_rootNodeAngle_01, parentHandPad.fourSmooth)));
+                if (middleNode != null)
+                    middleNode.localRotation = Quaternion.Euler(0f, 0f, Mathf.Lerp(middleNode_fromAngle, middleNode_toAngle, Mathf.Lerp(middleNodeAngle_01, prev_middleNodeAngle_01, parentHandPad.fourSmooth)));
+                if (pointNode != null)
+                    pointNode.localRotation = Quaternion.Euler(0f, 0f, Mathf.Lerp(pointNode_fromAngle, pointNode_toAngle, Mathf.Lerp(middleNodeAngle_01, prev_middleNodeAngle_01, parentHandPad.fourSmooth)));
 
                 prev_rootNodeAngle_01 = rootNodeAngle_01;
                 prev_middleNodeAngle_01 = middleNodeAngle_01;
             }
-            else if (pulsoGlove.gloveType == PulsoType.PulsoLite)
+            else if (parentHandPad.gloveType == PulsoType.PulsoLite)
             {
-                rootNode.localRotation = Quaternion.Euler(0f, 0f, Mathf.Lerp(rootNode_fromAngle, rootNode_toAngle, Mathf.Lerp(rootNodeAngle_01, prev_rootNodeAngle_01, pulsoGlove.fourSmooth)));
-                middleNode.localRotation = Quaternion.Euler(0f, 0f, Mathf.Lerp(middleNode_fromAngle, middleNode_toAngle, Mathf.Lerp(rootNodeAngle_01, prev_rootNodeAngle_01, pulsoGlove.fourSmooth)));
-                pointNode.localRotation = Quaternion.Euler(0f, 0f, Mathf.Lerp(pointNode_fromAngle, pointNode_toAngle, Mathf.Lerp(rootNodeAngle_01, prev_rootNodeAngle_01, pulsoGlove.fourSmooth)));
+                if (rootNode != null)
+                    rootNode.localRotation = Quaternion.Euler(0f, 0f, Mathf.Lerp(rootNode_fromAngle, rootNode_toAngle, Mathf.Lerp(rootNodeAngle_01, prev_rootNodeAngle_01, parentHandPad.fourSmooth)));
+                if (middleNode != null)
+                    middleNode.localRotation = Quaternion.Euler(0f, 0f, Mathf.Lerp(middleNode_fromAngle, middleNode_toAngle, Mathf.Lerp(rootNodeAngle_01, prev_rootNodeAngle_01, parentHandPad.fourSmooth)));
+                if (pointNode != null)
+                    pointNode.localRotation = Quaternion.Euler(0f, 0f, Mathf.Lerp(pointNode_fromAngle, pointNode_toAngle, Mathf.Lerp(rootNodeAngle_01, prev_rootNodeAngle_01, parentHandPad.fourSmooth)));
 
                 prev_rootNodeAngle_01 = rootNodeAngle_01;
             }
@@ -138,7 +143,7 @@ public class PULSO_HandpadNew : MonoBehaviour
 
 		public override void UpdateAngles ()
 		{
-            if (useAnimator)
+            if (useAnimator && animator != null)
 			{
 				float pos = 1f - rootNodeAngle_01;
 
@@ -148,15 +153,18 @@ public class PULSO_HandpadNew : MonoBehaviour
 				animator.Play(animationClipName, -1, pos);
 
                 
-                if (pulsoGlove.gloveType == PulsoType.PulsoPRO)
+                if (parentHandPad.gloveType == PulsoType.PulsoPRO)
                 {
-                    pointNode.localRotation = Quaternion.Euler(0f, 0f, Mathf.Lerp(pointNode_fromAngle, pointNode_toAngle, middleNodeAngle_01));
+                    if (pointNode != null)
+                        pointNode.localRotation = Quaternion.Euler(0f, 0f, Mathf.Lerp(pointNode_fromAngle, pointNode_toAngle, middleNodeAngle_01));
                     //middleNode.localRotation = Quaternion.Euler(0f, 0f, Mathf.Lerp(middleNode_fromAngle, middleNode_toAngle, middleNodeAngle_01));
                 }
-                else if (pulsoGlove.gloveType == PulsoType.PulsoLite)
+                else if (parentHandPad.gloveType == PulsoType.PulsoLite)
                 {
-                    pointNode.localRotation = Quaternion.Euler(0f, 0f, Mathf.Lerp(pointNode_fromAngle, pointNode_toAngle, rootNodeAngle_01));
-                    middleNode.localRotation = Quaternion.Euler(0f, 0f, Mathf.Lerp(middleNode_fromAngle, middleNode_toAngle, rootNodeAngle_01));
+                    if (pointNode != null)
+                        pointNode.localRotation = Quaternion.Euler(0f, 0f, Mathf.Lerp(pointNode_fromAngle, pointNode_toAngle, rootNodeAngle_01));
+                    if (middleNode != null)
+                        middleNode.localRotation = Quaternion.Euler(0f, 0f, Mathf.Lerp(middleNode_fromAngle, middleNode_toAngle, rootNodeAngle_01));
                 }
                 
             }
@@ -247,8 +255,24 @@ public float[] multiplyMul = new float[5] {1f,1f,1f,1f,1f};
     public Coroutine callibrationFingerProcess = null;
     public float callibrationKoef = 0.01f;
 
+    public bool fingersInitComplete = false;
+
+
+    public void OnEnable()
+    {
+        if (!fingersInitComplete)
+        {
+            InitHand();
+        }
+    }
 
     public void Awake()
+    {
+        InitHand();
+	}
+
+
+    void InitHand()
     {
         if (handSide == HandSide.LEFT)
         {
@@ -259,31 +283,50 @@ public float[] multiplyMul = new float[5] {1f,1f,1f,1f,1f};
             PULSO_Manager.RightHand = this;
         }
 
+
+        //ADD BIG FINGER TO MAIN ARRAY AS 0 INDEX
+        List<Finger> fList = new List<Finger>();
+        for (int i = 0; i < fingers.Length; i++)
+        {
+            fList.Add(fingers[i]);
+        }
+
+        fList.Insert(0, bigFinger);
+
+        /* 
+        // OLD
         fingers[4] = fingers[3];
         fingers[3] = fingers[2];
         fingers[2] = fingers[1];
         fingers[1] = fingers[0];
-	    fingers[0] = bigFinger;
+        fingers[0] = bigFinger;
+        */
 
-	    foreach (var f in fingers)
-	    {
-	        f.pulsoGlove = this;
+        fingers = fList.ToArray();
+
+        fList.Clear();
+
+        foreach (var f in fingers)
+        {
+            f.parentHandPad = this;
             f.Init();
-	    }
+        }
 
-	    if (pointerRoot == null)
-	    {
+        if (pointerRoot == null)
+        {
             Debug.LogError("Pointer root is NULL " + gameObject.name + " set to Hand root");
-	        pointerRoot = transform;
-	    }
-	}
+            pointerRoot = transform;
+        }
+
+        fingersInitComplete = true;
+    }
 
 
 
     void Start()
     {
         
-        if (Application.platform == RuntimePlatform.Android)
+        if (!Application.isEditor &&  Application.platform == RuntimePlatform.Android)
         {
 
             if (PulsoBT != null)
@@ -423,6 +466,7 @@ public float[] multiplyMul = new float[5] {1f,1f,1f,1f,1f};
 
 			    if (multiplyFunction)
 			    {
+					//angle_0_1 = Mathf.Sqrt(angle_0_1) * 2f;
 			        angle_0_1 =  Mathf.Pow(angle_0_1, multiplyMul[k]);
 			    }
 
@@ -430,20 +474,20 @@ public float[] multiplyMul = new float[5] {1f,1f,1f,1f,1f};
                 if (k < 5)
 			    {
 			        fingers[k].fingerInt = 511 - raw_0_254;
-			        fingers[k].rootNodeAngle_01 = fingers[k].invertMagnet ? angle_0_1 : 1f - angle_0_1;
+			        fingers[k].rootNodeAngle_01 = angle_0_1;
                 }
 
                 // 5 6 7 8 9 
 			    if (k > 4 && k < 10)
 			    {
 			        //fingers[k - 5].fingerInt = 511 - raw_0_254;
-			        fingers[k - 5].middleNodeAngle_01 = fingers[k - 5].invertMagnet2 ? angle_0_1 : 1f - angle_0_1;
+			        fingers[k - 5].middleNodeAngle_01 = angle_0_1;
                 }
                 // 10 11 12 13 14 
 			    if (k > 9 && k < 15)
 			    {
                     //fingers[k - 10].fingerInt = 511 - raw_0_254;
-			        fingers[k - 10].spokeNodeAngle_01 = fingers[k - 10].invertMagnet3 ? angle_0_1 : 1f - angle_0_1;
+			        fingers[k - 10].spokeNodeAngle_01 = angle_0_1;
 			    }
 
             }

@@ -24,7 +24,7 @@ public class PULSO_GunBehaviour : PULSO_Event
     
 
 
-    public PULSO_HandpadNew pulso;
+    public PULSO_Handpad pulso;
 
     public enum ShotState
 	{
